@@ -1,9 +1,10 @@
 PressureProjections
 =============
 
-Code supplement for "Accuracy of post-processing projections for displacement based finite element simulations in room acoustics" 
+Code supplement for article "**Accuracy of post-processing projections for displacement based finite element simulations in room acoustics**"
 
-A Julia implementation (based on Gridap package) of different $L^2$ and $H^1$-projections for computing the acoustic pressure from the particle displacement field. This repository contains the prototype codes to reproduce all the numerical results included as benchmark cases in the manuscript "Accuracy of post-processing projections for displacement based finite element simulations in room acoustics". 
+This repository contains the scripts to reproduce all the numerical results included as benchmark cases in the manuscript.
+The implementation is in the **Julia** programming language, primarily using [_Gridap_](https://github.com/gridap/Gridap.jl) package.
 
 Details:
   - Weak formulation for pressure $L^2$ and $H^1$-projections.
@@ -13,15 +14,21 @@ Details:
 
 
 Authors:
-  - [Ashwin S. Nayak](https://orcid.org/0000-0002-9855-2377)
-  - [Andrés Prieto](https://orcid.org/0000-0002-4399-6878)
-  - [Daniel Fernández-Comesaña](https://orcid.org/0000-0003-3286-6637)
+  - **Ashwin S. Nayak**
+  [![orcid](https://img.shields.io/badge/%20-orcid-black?logo=orcid&style=plastic)](https://orcid.org/0000-0002-9855-2377)
+  [![github](https://img.shields.io/badge/%20-github-black?logo=github&style=plastic)](https://github.com/ashwin-nayak)
+  - **Andrés Prieto**
+  [![orcid](https://img.shields.io/badge/%20-orcid-black?logo=orcid&style=plastic)](https://orcid.org/0000-0002-4399-6878)
+  [![github](https://img.shields.io/badge/%20-github-black?logo=github&style=plastic)](https://github.com/maprieto)
+  - **Daniel Fernández-Comesaña**
+  [![orcid](https://img.shields.io/badge/%20-orcid-black?logo=orcid&style=plastic)](https://orcid.org/0000-0003-3286-6637)
+  [![github](https://img.shields.io/badge/%20-github-black?logo=github&style=plastic)](https://github.com/fernandez-microflown)
 
 Affiliation:
-  - [Centro of Mathematical Research and Technology of Galicia](https://citmaga.gal/en/home), A Coruña, Spain.
+  - [Centre for Mathematical Research and Technology of Galicia (CITMaGa)](https://citmaga.gal/en/home), A Coruña, Spain.
 
 Repository:
-  - https://github.com/ashwin-nayak/PressureProjections
+  - https://github.com/ashwin-nayak/pressure-projections
 
 License:
   - MIT, see [`LICENSE.txt`](LICENSE.txt).
