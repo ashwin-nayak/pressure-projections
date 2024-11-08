@@ -1,9 +1,9 @@
-PressureProjections
-=============
+Pressure Projections
+====================
 
-Code supplement for article "**Accuracy of post-processing projections for displacement based finite element simulations in room acoustics**"
+Code supplement for article "**Accuracy of post-processing projections for displacement based finite element simulations in room acoustics**".
 
-This repository contains the scripts to reproduce all the numerical results included as benchmark cases in the manuscript.
+This repository contains scripts to reproduce all the numerical results included as benchmark cases in the article.
 The implementation is in the **Julia** programming language, primarily using [_Gridap_](https://github.com/gridap/Gridap.jl) package.
 
 Details:
@@ -62,7 +62,7 @@ The library is structured into the following folders, which correspond to each b
 | `2D-square-noise-example`         | Two-dimensional planewave propagation in the unit square in the presence of noise |
 | `2D-room-example`                 | Two-dimensional transmitted field in the interior of the cross-section of an auditorium |
 
-To use the code, you must first set the environment and dependent Julia packages.
+To run the scripts, you must first set the environment and dependent Julia packages.
 Instructions provided here are provided for standard UNIX distributions, but maybe easily adopted (but not tested) in other operating systems.
 
 You may either choose to use,
@@ -92,6 +92,26 @@ This should run an instance of the Julia REPL where each benchmark can be execut
 > Ensure that the directory to store the `main` folder for this repository exists before running, since this needs to be mounted as shared volume within the host and container. This also preserves user permissions on the files that are created within the container.
 
 ## Run in Julia
+
+### Set Julia environment
+
+#### Install Julia and dependencies
+The scripts are developed using [Julia v1.11.0](https://docs.julialang.org/en/v1.11/).
+Follow the installation instructions (using `juliaup`) if you do not have it installed before.
+
+> If you installed Julia previously with a method that is not based on `juliaup`, it is recommended that you uninstall all previous versions, ensure that you remove anything Julia-related from your `PATH` variable and then install Julia with one of the suggested methods in the [documentation](https://docs.julialang.org/en/v1.11/manual/installation/).
+
+If you alreaady have another version, add the specific version of julia by,
+```bash
+juliaup add 1.11.0
+```
+Start the REPL from the main project directory using,
+
+```bash
+julia +1.11.0 --project=${PWD}
+```
+
+### Run Scripts
 
 If a previous installation of Julia is available, and the requirements of the [`Manifest.toml`](Manifest.toml) and [`Project.toml`](Project.toml) are satisfied, then each benchmark can be run independently in its respective folder (where they are available) as follows.
 
