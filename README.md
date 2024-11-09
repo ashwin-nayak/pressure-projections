@@ -103,3 +103,9 @@ Setup the right versions and proper environment to run the scripts by following 
 ### Run Scripts
 
 If a previous installation of Julia is available, and the dependencies are installed, then each benchmark can be run independently in its respective folder.
+
+Alternatively, an automated script `main.jl` is provided to run all benchmarks (within the project directory),
+```bash
+# Run while ensuring Julia 1.11.0 and environment is corrected set
+julia +1.11.0 --project=. main.jl
+```
