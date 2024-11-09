@@ -45,6 +45,12 @@ License:
 
 ## Getting Started
 
+First, clone the repository or download the contents locally on your computer, and ensure you are working from within,
+```bash
+git clone git@github.com:ashwin-nayak/pressure-projections.git
+cd pressure-projections
+```
+
 The library is structured into the following folders, which correspond to each benchmark scenarios:
 
 | Folder              | Information                                                                     |
