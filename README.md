@@ -75,21 +75,31 @@ The project offers a [`Dockerfile`](Dockerfile) to automate the configuration an
 setting relevant dependencies, hosting the source code, building executables and running the demos.
 
 Necessary tools:
-  - [Docker Desktop](https://docs.docker.com/desktop/) specifically Docker Engine (tested with `26.1.3`).
+  - [Docker Desktop](https://docs.docker.com/desktop/) specifically Docker Engine (tested with `27.3.1`).
 
-Build the `PressureProjections` image which contains the environment, copies the source code and builds executables
+Build the `pressure-projections` image which contains the environment, copies the source code and builds executables
 
 ```bash
-docker build -f Dockerfile --tag PressureProjections .
+docker build -f Dockerfile --tag pressure-projections .
 ```
 
-Run the container by sharing the main folder within and user id information to manage the generated file permissions,
+Run a disposable container by sharing the project folder within,
 ```bash
-docker run --rm -u $(id -u):$(id -g) -v ${PWD}/main:julia
+docker run --rm \
+  -u $(id -u):$(id -g) \
+  -v $PWD:/src \
+  -w /src pressure-projections \
+  julia \
+    --project=. \
+    --startup-file=no \
+    --history-file=no \
+    -e 'using Pkg; Pkg.instantiate(); include("main.jl")'
 ```
-This should run an instance of the Julia REPL where each benchmark can be executed. Each benchmark folder has an intentionally empty meshes and results folder where the meshes and the plots are storage.
 
-> Ensure that the directory to store the `main` folder for this repository exists before running, since this needs to be mounted as shared volume within the host and container. This also preserves user permissions on the files that are created within the container.
+This should run an instance of the Julia REPL where each benchmark can be executed.
+Each benchmark folder has an intentionally empty meshes and results folder where the meshes and the plots are storage.
+
+> The flags ensure correct user permissions are set on the container-generated output files. Additionally, the container information is cleared at the end of the run.
 
 ## Compile and Run
 
@@ -97,15 +107,24 @@ This should run an instance of the Julia REPL where each benchmark can be execut
 
 Setup the right versions and proper environment to run the scripts by following along the links,
 
-1. [Install Julia (`v1.11`)](https://docs.julialang.org/en/v1.11/)
+1. [Install Julia (`v1.11.0`)](https://docs.julialang.org/en/v1.11.0/)
 2. [Install Dependencies](https://pkgdocs.julialang.org/v1/environments/#Using-someone-else's-project)
 
 ### Run Scripts
 
-If a previous installation of Julia is available, and the dependencies are installed, then each benchmark can be run independently in its respective folder.
-
-Alternatively, an automated script `main.jl` is provided to run all benchmarks (within the project directory),
+Ensure proper julia version is available through `juliaup`,
 ```bash
-# Run while ensuring Julia 1.11.0 and environment is corrected set
+juliaup add 1.11.0
+```
+
+Install relevant dependencies to ensure proper environment,
+```bash
+julia +1.11.0 --project=. -e "using Pkg; Pkg.instantiate();"
+```
+
+Each benchmark can be run independently in its respective folder.
+Alternatively, an automated script `main.jl` is provided to run **all the benchmarks** (run from within the project directory),
+```bash
+# run while ensuring julia v1.11.0 and proper environment
 julia +1.11.0 --project=. main.jl
 ```
