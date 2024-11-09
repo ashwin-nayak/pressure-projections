@@ -97,14 +97,10 @@ Each benchmark folder has an intentionally empty meshes and results folder where
 
 ## Run in Julia
 
-### Configure Dependencies
-
 Setup the right versions and proper environment to run the scripts by following along the links,
 
 1. [Install Julia (`v1.11.0`)](https://docs.julialang.org/en/v1.11.0/)
 2. [Install Dependencies](https://pkgdocs.julialang.org/v1/environments/#Using-someone-else's-project)
-
-### Run Scripts
 
 Ensure proper julia version is available through `juliaup`,
 ```bash
