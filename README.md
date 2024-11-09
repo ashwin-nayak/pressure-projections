@@ -39,13 +39,7 @@ License:
 <ul>
   <li><a href="#getting-started">Getting Started</a></li>
   <li><a href="#run-using-docker-container">Run using docker container</a></li>
-  <li><a href="#compile-and-run">Run benchmarks in Julia</a>
-    <ul>
-      <li><a href="#2D-convergence-examples">2D convergence examples</a></li>
-      <li><a href="#2D-square-noise-example">2D square noise example</a></li>
-      <li><a href="#2D-room-example">2D room example</a></li>
-    </ul>
-  </li>
+  <li><a href="#run-in-julia">Run benchmarks in Julia</a></li>
 </ul>
 </details>
 
@@ -91,7 +85,7 @@ This should run an instance of the Julia REPL where each benchmark can be execut
 
 > Ensure that the directory to store the `main` folder for this repository exists before running, since this needs to be mounted as shared volume within the host and container. This also preserves user permissions on the files that are created within the container.
 
-## Compile and Run
+## Run in Julia
 
 ### Configure Dependencies
 
