@@ -1,0 +1,15 @@
+{
+  "name": "pressure-projections-dev",
+  "build" : {
+      "dockerfile": "Dockerfile"
+  },
+  "remoteUser": "vscode",
+  "customizations": {
+      "vscode": {
+          "extensions": [
+              "julialang.language-julia",
+              "shardulm94.trailing-spaces"
+          ]
+      }
+  }
+}
