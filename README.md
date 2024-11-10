@@ -67,7 +67,7 @@ Instructions provided here are provided for standard UNIX distributions, but may
 
 You may either choose to use,
   - [Build and run in containers](#run-using-docker-container): Recommended to primarily reproduce results
-  - [Compile and Run](#compile-and-run): Recommended for customizations and further development.
+  - [Compile and Run](#run-in-julia): Recommended for customizations and further development.
 
 ## Run using docker container
 
@@ -97,7 +97,6 @@ docker run --rm \
 ```
 
 This should run an instance of the Julia REPL where each benchmark can be executed.
-Each benchmark folder has an intentionally empty meshes and results folder where the meshes and the plots are storage.
 
 > The flags ensure correct user permissions are set on the container-generated output files. Additionally, the container information is cleared at the end of the run.
 
