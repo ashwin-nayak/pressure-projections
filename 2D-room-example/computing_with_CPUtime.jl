@@ -17,7 +17,7 @@ using GridapMakie, CairoMakie, FileIO, LaTeXStrings
 using BenchmarkTools
 
 # Load the meshing.jl file to use the generate_mesh function
-include("../projecting.jl")
+include("projecting.jl")
 
 function compute_from_fem_with_CPUtime(k, N, orderFE, orderFE_postprocessing,  boundary_data, plot_flag=false)
 
