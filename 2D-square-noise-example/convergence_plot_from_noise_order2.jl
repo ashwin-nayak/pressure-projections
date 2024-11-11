@@ -42,9 +42,9 @@ end
 
 # Save errors to a JDL2 file
 using JLD2
-save("convergence_data_from_noise_k=$(Integer(k))_orderFEpostprocessing=$(orderFE_postprocessing).jld2", 
-    "SNR_values", SNR_values, "k", k, "orderFE_postprocessing", orderFE_postprocessing, 
-    "error_L2_u", error_L2_u, "error_H1_u", error_H1_u, 
+save("convergence_data_from_noise_k=$(Integer(k))_orderFEpostprocessing=$(orderFE_postprocessing).jld2",
+    "SNR_values", SNR_values, "k", k, "orderFE_postprocessing", orderFE_postprocessing,
+    "error_L2_u", error_L2_u, "error_H1_u", error_H1_u,
     "error_L2_proj_DG", error_L2_proj_DG, "error_H1_proj_DG", error_H1_proj_DG, "error_L2_proj_CG", error_L2_proj_CG, "error_H1_proj_CG", error_H1_proj_CG,
     "error_L2_proj_H1", error_L2_proj_H1, "error_H1_proj_H1", error_H1_proj_H1, "error_L2_proj_H2_DG", error_L2_proj_H2_DG, "error_H1_proj_H2_DG", error_H1_proj_H2_DG)
 

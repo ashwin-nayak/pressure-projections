@@ -3,7 +3,7 @@ using Gridap
 using Gridap.Io
 using GridapGmsh
 
-# Generate the mesh for a fluid domain: 
+# Generate the mesh for a fluid domain:
 # a vertical cross-section of a auditorium-like geometry with staircase bottom
 function generate_mesh(N)
     # Room parameters

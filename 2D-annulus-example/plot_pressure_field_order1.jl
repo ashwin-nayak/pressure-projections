@@ -17,9 +17,9 @@ orderFE_postprocessing = 1 # order of the finite element for postprocessing
 # Define the exact solution# Compute the analytical solution and the displacement error
 p0 = 1.0 # Pressure amplitude
 pex(x) = p0 * hankelh1(0, k*sqrt(x[1]^2+x[2]^2)) / hankelh1(0, k) # =-divergence(uex(x))
-uex(x) = VectorValue(-x[1]/(sqrt(x[1]^2+x[2]^2)) / k * p0 * hankelh1(1, k*sqrt(x[1]^2+x[2]^2)) / hankelh1(0, k), 
+uex(x) = VectorValue(-x[1]/(sqrt(x[1]^2+x[2]^2)) / k * p0 * hankelh1(1, k*sqrt(x[1]^2+x[2]^2)) / hankelh1(0, k),
                         -x[2]/(sqrt(x[1]^2+x[2]^2)) / k * p0 * hankelh1(1, k*sqrt(x[1]^2+x[2]^2)) / hankelh1(0, k))
-grad_pex(x) = VectorValue(-x[1]/(sqrt(x[1]^2+x[2]^2)) * k * p0 * hankelh1(1, k*sqrt(x[1]^2+x[2]^2)) / hankelh1(0, k), 
+grad_pex(x) = VectorValue(-x[1]/(sqrt(x[1]^2+x[2]^2)) * k * p0 * hankelh1(1, k*sqrt(x[1]^2+x[2]^2)) / hankelh1(0, k),
                          -x[2]/(sqrt(x[1]^2+x[2]^2)) * k * p0 * hankelh1(1, k*sqrt(x[1]^2+x[2]^2)) / hankelh1(0, k)) # =k^2*uex(x)
 exact_solution = Dict("ExactPressure"=>pex, "ExactDisplacement"=>uex, "ExactGradientPressure"=>grad_pex)
 

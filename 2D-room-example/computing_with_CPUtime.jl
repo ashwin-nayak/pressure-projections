@@ -29,7 +29,7 @@ function compute_from_fem_with_CPUtime(k, N, orderFE, orderFE_postprocessing,  b
     benchmark_u = @benchmark uh = RT_solve($k, $orderFE, $model, $boundary_data)
 
     # Compute the solution of pressure-based formulation using Lagrange discretization
-    benchmark_p = @benchmark ph = CG_solve($k, $orderFE_postprocessing, $model, $boundary_data) 
+    benchmark_p = @benchmark ph = CG_solve($k, $orderFE_postprocessing, $model, $boundary_data)
 
     # Compute the pressure projections
     benchmark_proj_DG = @benchmark ph_L2_DG = L2_DG_projection($uh, $orderFE_postprocessing, $model)
@@ -64,7 +64,7 @@ function compute_from_fem_with_CPUtime(k, N, orderFE, orderFE_postprocessing,  b
         # Save the figure to pdf format with 300 dpi
         save("./results/plot_p_H2_N=$(N).pdf", fig)
     end
-    
+
     # # Write the results to a VTK file with fileneame "results_N.vtu" with N the mesh size
     # writevtk(Ω,"./results/results_N=$(N)_order=$(orderFE).vtu", cellfields=["Re(uh)"=>real(uh), "Im(uh)"=>imag(uh),
     #                                         "Re(uex)"=>real(uex ∘ xp), "Im(uex)"=>imag(uex ∘ xp),

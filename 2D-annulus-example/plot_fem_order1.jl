@@ -11,7 +11,7 @@ using JLD2
 file = "convergence_data_from_fem_k=50_orderFE=1_orderFEpostprocessing=1.jld2"
 vars = load(file)
 k = vars["k"]
-orderFE_postprocessing = vars["orderFE_postprocessing"] 
+orderFE_postprocessing = vars["orderFE_postprocessing"]
 N_values = 1.0./vars["h_values"]
 error_L2_u = vars["error_L2_u"]
 error_H1_u = vars["error_H1_u"]
@@ -31,7 +31,7 @@ using CairoMakie, LaTeXStrings
 fig = Figure(size = (600, 400), fonts = (; regular="CMU Serif")) ## probably you need to install this font in your system
 ax = Axis(fig[1, 1], xlabel = L"$\lambda/h$", ylabel = L"Relative error (%)$$", xtickalign = 1,
 xticksize = 10, ytickalign = 1, yticksize = 10, xscale=log10, yscale=log10, # xticks = vcat([2*pi/k.*N_values[end]], 10 .^range(-3, stop=-1, length=3)), yticks = 10 .^range(-5, stop=2, length=8)
-    yminorticksvisible = true, yminorgridvisible = true, yminorticks = IntervalsBetween(9), 
+    yminorticksvisible = true, yminorgridvisible = true, yminorticks = IntervalsBetween(9),
     xminorticksvisible = true, xminorgridvisible = true, xminorticks = IntervalsBetween(9))
 # Error u
 scatterlines!(2*pi/k.*N_values, error_L2_u, color = :black, linestyle = :dash ,  label = L"$\mathrm{L}^2$-error $\mathbf{u}_{h,\mathrm{RT}_{0}}$", marker = '△', markersize = 10)
@@ -69,6 +69,6 @@ x0=10.0^1.5; y0=3e0
 x1=10.0^1.15; y1=y0*(x0/x1)^order
 lines!([(x0, y0), (x1, y0), (x1, y1), (x0, y0)], color=:black, linewidth=0.5)
 text!([(10.0^((log10(x0)+log10(x1))/2), 10.0^(0.9*log10(y0)+0.1*log10(y1)))], text=L"O(h)", color=:black, fontsize=10)
- 
+
 fig
 save("convergence_plot_from_fem_k=$(Integer(k))_orderFE=$(orderFE)_orderFEpostprocessing=$(orderFE_postprocessing).pdf", fig)

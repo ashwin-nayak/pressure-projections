@@ -1,6 +1,6 @@
 """
 Computation of the different projections of the solution of the vector-valued Helmholtz equation
-attending to the different finite element spaces (continuous and discontinuous Galerkin approaches) used in the variational formulation 
+attending to the different finite element spaces (continuous and discontinuous Galerkin approaches) used in the variational formulation
 for the  and L^2 and H^1-projections. Additionally, the scalar Helmholtz equation is solved using the continuous Galerkin approach
 to obtain the pressure field in H^1. All the projections are computed using the Gridap.jl package.
 """
@@ -90,13 +90,13 @@ function CG_solve(k, orderFE, model, boundary_data)
 
     # Define the variational problem: first factor in the cdot product is the conjugated test function
     a(u, v) =  ∫(∇(v) ⋅ ∇(u))dΩ - k^2*∫(v ⋅ u)dΩ - 1im*k/Za*∫(v ⋅ u)dΓa
-    b(v) = k^2*∫(v ⋅ (np ⋅ (uD ∘ xp)))dΓp  
+    b(v) = k^2*∫(v ⋅ (np ⋅ (uD ∘ xp)))dΓp
 
     # Assembly the system
     op = AffineFEOperator(a, b, U, V)
     # Solve the system
     ph = solve(op)
-    
+
     return ph
 end
 
@@ -123,7 +123,7 @@ function L2_DG_projection(uh, orderFE, model)
     op = AffineFEOperator(a, b, U, V)
     # Solve the system
     ph = solve(op)
-    
+
     return ph
 end
 
@@ -143,8 +143,8 @@ function L2_CG_projection(uh, orderFE, model)
 
     # Define the variational problem
     ph = -divergence(uh)
-    a(u, v) = ∫(v ⋅ u)dΩ 
-    b(v) = ∫(v ⋅ ph)dΩ 
+    a(u, v) = ∫(v ⋅ u)dΩ
+    b(v) = ∫(v ⋅ ph)dΩ
 
     # Define alternative variational problem using the divergence theorem on uh
     # Γ = BoundaryTriangulation(model)
@@ -157,7 +157,7 @@ function L2_CG_projection(uh, orderFE, model)
     op = AffineFEOperator(a, b, U, V)
     # Solve the system
     ph = solve(op)
-    
+
     return ph
 end
 
@@ -194,13 +194,13 @@ function H1_projection(k, uh, orderFE, model)
     # nb = get_normal_vector(Γ) # Normal
     # ph = -divergence(uh)
     # a(u, v) = 2*∫(v ⋅ u)dΩ
-    # b(v) = ∫(v ⋅ ph)dΩ + ∫(∇(v) ⋅ uh)dΩ - ∫(v ⋅ (nb ⋅ uh))dΓ 
+    # b(v) = ∫(v ⋅ ph)dΩ + ∫(∇(v) ⋅ uh)dΩ - ∫(v ⋅ (nb ⋅ uh))dΓ
 
     # Assembly the system
     op = AffineFEOperator(a, b, U, V)
     # Solve the system
     ph = solve(op)
-    
+
     return ph
 end
 
@@ -238,17 +238,17 @@ function H2_projection_DG(k, uh, orderFE, model, N)
     # Compute mesh size
     h = 1.0/N
     # Variational terms in the interior of the elements and on their edges
-    a_Ω(u, v) = k^2*∫(v ⋅ u)dΩ + ∫(∇(v) ⋅ ∇(u))dΩ #+ ∫(Δ(v) ⋅ Δ(u))dΩ 
+    a_Ω(u, v) = k^2*∫(v ⋅ u)dΩ + ∫(∇(v) ⋅ ∇(u))dΩ #+ ∫(Δ(v) ⋅ Δ(u))dΩ
     a_Λ(u, v) = ∫( (γ/h)*jump(v) ⋅ jump(u) )dΛ
 
     # Variational formulation
     a(u, v) = a_Ω(u, v) + a_Λ(u, v)
-    b(v) = k^2*∫(v ⋅ ph)dΩ + k^2*∫(∇(v) ⋅ uh)dΩ #- k^2*∫(Δ(v) ⋅ ph)dΩ 
+    b(v) = k^2*∫(v ⋅ ph)dΩ + k^2*∫(∇(v) ⋅ uh)dΩ #- k^2*∫(Δ(v) ⋅ ph)dΩ
 
     # Assembly the system
     op = AffineFEOperator(a, b, U, V)
     # Solve the system
     ph = solve(op)
-    
+
     return ph
 end

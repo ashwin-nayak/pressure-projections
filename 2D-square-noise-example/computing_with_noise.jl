@@ -108,8 +108,8 @@ function compute_pressure_from_noise(k, N, SNR, orderFE_postprocessing, model, V
     error_L2_proj_H2_DG = L2_error(ph_H2, pex, dΩex, xp)
 
     # Compute the H1-relative error in the entire computational domain for ph_H1
-    error_energy_proj_H2_DG = energy_error(ph_H2, pex, ∇(ph_H2), grad_pex, dΩex, xp, k) 
-    
+    error_energy_proj_H2_DG = energy_error(ph_H2, pex, ∇(ph_H2), grad_pex, dΩex, xp, k)
+
     # # Write the results to a VTK file with fileneame "results_N.vtu" with N the mesh size
     # writevtk(Ω,"./results/results_N=$(N)_SNR=$(SNR).vtu", cellfields=["Re(uh)"=>real(uh), "Im(uh)"=>imag(uh),
     #         "Re(uex)"=>real(uex ∘ xp), "Im(uex)"=>imag(uex ∘ xp),
@@ -120,7 +120,7 @@ function compute_pressure_from_noise(k, N, SNR, orderFE_postprocessing, model, V
     #         "Re(ph_H1)"=>real(ph_H1), "Im(ph_H1)"=>imag(ph_H1),
     #         "Re(ph_H2)"=>real(ph_H2), "Im(ph_H2)"=>imag(ph_H2),
     #         "Re(pex)"=>real(pex ∘ xp), "Im(pex)"=>imag(pex ∘ xp)])
-    
+
     # Plot using GridapMakie some fields only if plot_flag is true
     if plot_flag==true
         # Plot displacement field with noise
@@ -129,7 +129,7 @@ function compute_pressure_from_noise(k, N, SNR, orderFE_postprocessing, model, V
         ax.xlabel = L"x"
         ax.ylabel = L"y"
         xlims!(ax, 0.0, 1.0)
-        ylims!(ax, 0.0, 1.0) 
+        ylims!(ax, 0.0, 1.0)
         plt.colorrange=(-5e-2,5e-2)
         # Axis equal
         ax.aspect = DataAspect()
@@ -144,7 +144,7 @@ function compute_pressure_from_noise(k, N, SNR, orderFE_postprocessing, model, V
         ax.xlabel = L"x"
         ax.ylabel = L"y"
         xlims!(ax, 0.0, 1.0)
-        ylims!(ax, 0.0, 1.0) 
+        ylims!(ax, 0.0, 1.0)
         plt.colorrange=(-5e-2,5e-2)
         # Axis equal
         ax.aspect = DataAspect()
@@ -168,7 +168,7 @@ function compute_pressure_from_noise(k, N, SNR, orderFE_postprocessing, model, V
         cbar.limits = (-1.0, 1.0)
         # Save the figure to pdf format with 300 dpi
         save("./results/plot_pex_N=$(N)_SNR=$(SNR).pdf", fig)
-        
+
         # Plot pressure field with noise: ph_L2_DG
         fig , ax , plt = plot(Ω, real(ph_L2_DG))
         # Set x- and y-axis labels

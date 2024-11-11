@@ -23,4 +23,3 @@ exact_solution = Dict("ExactPressure"=>pex, "ExactDisplacement"=>uex, "ExactGrad
 
 # Compute the relative errors and plot
 error_L2_u, error_H1_u, error_L2_p, error_H1_p, error_L2_proj_DG, error_H1_proj_DG, error_L2_proj_CG, error_H1_proj_CG, error_L2_proj_H1, error_H1_proj_H1, error_L2_proj_H2_DG, error_H1_proj_H2_DG = compute_from_exact(k, N_value, orderFE_postprocessing, exact_solution, true)
-

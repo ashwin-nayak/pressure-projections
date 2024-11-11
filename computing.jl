@@ -109,7 +109,7 @@ function compute_from_fem(k, N, orderFE, orderFE_postprocessing, exact_solution,
 
     # Compute the energy-norm-relative error in the entire computational domain
     error_energy_p = energy_error(ph, pex, ∇(ph), grad_pex, dΩex, xp, k)
-    
+
     # # Write the results to a VTK file with fileneame "results_N.vtu" with N the mesh size
     # writevtk(Ω,"./results/results_N=$(N)_order=$(orderFE).vtu", cellfields=["Re(uh)"=>real(uh), "Im(uh)"=>imag(uh),
     #                                         "Re(uex)"=>real(uex ∘ xp), "Im(uex)"=>imag(uex ∘ xp),
@@ -185,7 +185,7 @@ function compute_from_exact(k, N, orderFE_postprocessing, exact_solution, plot_f
     error_L2_proj_H2_DG = L2_error(ph_H2, pex, dΩex, xp)
 
     # Compute the H1-relative error in the entire computational domain for ph_H1
-    error_energy_proj_H2_DG = energy_error(ph_H2, pex, ∇(ph_H2), grad_pex, dΩex, xp, k)    
+    error_energy_proj_H2_DG = energy_error(ph_H2, pex, ∇(ph_H2), grad_pex, dΩex, xp, k)
 
     # Compute the L^2-relative error in the entire computational domain
     error_L2_p = L2_error(ph, pex, dΩex, xp)
@@ -218,7 +218,7 @@ function compute_from_exact(k, N, orderFE_postprocessing, exact_solution, plot_f
         # Save the figure to pdf format with 300 dpi
         save("./results/plot_pex_N=$(N).pdf", fig)
     end
-    
+
     # # Write the results to a VTK file with fileneame "results_N.vtu" with N the mesh size
     # writevtk(Ω,"./results/results_N=$(N)_order=$(orderFE).vtu", cellfields=["Re(uh)"=>real(uh), "Im(uh)"=>imag(uh),
     #                                         "Re(uex)"=>real(uex ∘ xp), "Im(uex)"=>imag(uex ∘ xp),

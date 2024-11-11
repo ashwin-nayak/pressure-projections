@@ -47,7 +47,7 @@ using CairoMakie, LaTeXStrings
 fig = Figure(size = (600, 400), fonts = (; regular="CMU Serif")) ## probably you need to install this font in your system
 ax = Axis(fig[1, 1], xlabel = L"$\lambda/h$", ylabel = L"Relative error (%)$$", xtickalign = 1,
 xticksize = 10, ytickalign = 1, yticksize = 10, xscale=log10, yscale=log10, #xticks = vcat([2*pi/k.*N_values[end]], 10 .^range(-3, stop=-1, length=3)), yticks = 10 .^range(-5, stop=2, length=8),
-    yminorticksvisible = true, yminorgridvisible = true, yminorticks = IntervalsBetween(9), 
+    yminorticksvisible = true, yminorgridvisible = true, yminorticks = IntervalsBetween(9),
     xminorticksvisible = true, xminorgridvisible = true, xminorticks = IntervalsBetween(9))
 # Error u
 scatterlines!(2*pi/k.*N_values, error_L2_u, color = :black, linestyle = :dash ,  label = L"$\mathrm{L}^2$-error $I_{h,\mathrm{RT}_{0}}$", marker = '△', markersize = 10)
@@ -70,7 +70,7 @@ scatterlines!(2*pi/k.*N_values, error_H1_proj_H2_DG, color = :purple, label = L"
 # axislegend(; position = :rb, nbanks = 1, framecolor = (:grey, 0.5))
 Legend(fig[1, 2], ax, halign = :right, valign = :top, labelsize = 17, markersize = 10, markerstrokewidth = 0.5)
 xlims!(ax, 2*pi/k.*N_values[end], 2*pi/k.*N_values[1])
-ylims!(ax, 5e-3, 2e2) 
+ylims!(ax, 5e-3, 2e2)
 
 # Plots triangles for order of convergence
 order=2
