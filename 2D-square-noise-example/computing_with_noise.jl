@@ -1,3 +1,9 @@
+# Copyright (c) 2024 Ashwin. S. Nayak, Andrés Prieto, Daniel Fernández Comesaña
+#
+# This file is part of pressure-projections
+#
+# SPDX-License-Identifier:  MIT
+
 """
 Computation of the different post-processing pressure projections solution and measurement of their errors
 from a displacement field, which is either obtained from a Raviart-Thomas discretization (implemented in Gridap) but in the presence of a Gaussian noise field on a triangular mesh

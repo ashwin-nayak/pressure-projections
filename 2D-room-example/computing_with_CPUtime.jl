@@ -1,3 +1,9 @@
+# Copyright (c) 2024 Ashwin. S. Nayak, Andrés Prieto, Daniel Fernández Comesaña
+#
+# This file is part of pressure-projections
+#
+# SPDX-License-Identifier:  MIT
+
 """
 Compute the solution of displacement-based using first-order Raviart-Thomas discretization
 with the Finite Element Method in Gridap.jl

@@ -1,3 +1,9 @@
+# Copyright (c) 2024 Ashwin. S. Nayak, Andrés Prieto, Daniel Fernández Comesaña
+#
+# This file is part of pressure-projections
+#
+# SPDX-License-Identifier:  MIT
+
 """
 Plot the interpolated values of the exact solution for an specific triangular mesh (N)
 a fixed FE order, and a given wavenumber k

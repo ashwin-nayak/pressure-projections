@@ -1,3 +1,9 @@
+# Copyright (c) 2024 Ashwin. S. Nayak, Andrés Prieto, Daniel Fernández Comesaña
+#
+# This file is part of pressure-projections
+#
+# SPDX-License-Identifier:  MIT
+
 """
 Computation and plot of the error curves obtained from the post-processing projection techniques
 when the displacement field is computed from the second-order Raviart-Thomas FE discretizations

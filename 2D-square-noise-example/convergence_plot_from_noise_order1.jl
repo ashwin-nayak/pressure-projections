@@ -1,3 +1,9 @@
+# Copyright (c) 2024 Ashwin. S. Nayak, Andrés Prieto, Daniel Fernández Comesaña
+#
+# This file is part of pressure-projections
+#
+# SPDX-License-Identifier:  MIT
+
 """
 Computation and plot of the error curves obtained from the post-processing projection techniques (first-order Raviart-Thomas FE discretizations)
 when the displacement field is computed from a displacemtn field in the presence of noise

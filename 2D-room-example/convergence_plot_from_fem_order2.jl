@@ -1,3 +1,9 @@
+# Copyright (c) 2024 Ashwin. S. Nayak, Andrés Prieto, Daniel Fernández Comesaña
+#
+# This file is part of pressure-projections
+#
+# SPDX-License-Identifier:  MIT
+
 """
 Benchmarking and plot of the performance curves (CPU time and memory) obtained from the post-processing projection techniques
 when the displacement field is computed from the second-order Raviart-Thomas FE discretizations

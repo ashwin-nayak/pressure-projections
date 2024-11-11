@@ -1,3 +1,9 @@
+# Copyright (c) 2024 Ashwin. S. Nayak, Andrés Prieto, Daniel Fernández Comesaña
+#
+# This file is part of pressure-projections
+#
+# SPDX-License-Identifier:  MIT
+
 """
 Computation of the different projections of the solution of the vector-valued Helmholtz equation
 attending to the different finite element spaces (continuous and discontinuous Galerkin approaches) used in the variational formulation
