@@ -7,11 +7,10 @@ This repository contains scripts to reproduce all the numerical results included
 The implementation is in the **Julia** programming language, primarily using [_Gridap_](https://github.com/gridap/Gridap.jl) package.
 
 Details:
-  - Weak formulation for pressure $L^2$ and $H^1$-projections.
+  - Weak formulation for pressure $L^2$ and $H^1$-projections
   - Continuous and discontinuous Galerkin discretizations for computing the pressure field
   - First and second-order finite element discretizations are analyzed
   - Error convergence and computational performance is illustrated with different benchmarks
-
 
 Authors:
   - **Ashwin S. Nayak**
@@ -40,12 +39,13 @@ License:
   <li><a href="#getting-started">Getting Started</a></li>
   <li><a href="#run-using-docker-container">Run using docker container</a></li>
   <li><a href="#run-in-julia">Run benchmarks in Julia</a></li>
+  <li><a href="#development-container-for-developers">Development container (for developers)</a></li>
 </ul>
 </details>
 
 ## Getting Started
 
-First, clone the repository or download the contents locally on your computer, and ensure you are working from within,
+First, clone the repository or download the contents locally on your computer, and ensure you are working within project directory,
 ```bash
 git clone git@github.com:ashwin-nayak/pressure-projections.git
 cd pressure-projections
@@ -107,7 +107,12 @@ Setup the right versions and proper environment to run the scripts by following 
 1. [Install Julia (`v1.11.0`)](https://docs.julialang.org/en/v1.11.0/)
 2. [Install Dependencies](https://pkgdocs.julialang.org/v1/environments/#Using-someone-else's-project)
 
-Ensure proper julia version is available through `juliaup`,
+> If you already have installed Julia before, verify the version you have by,
+> ```shell
+>julia -e 'using InteractiveUtils; versioninfo()'
+>```
+
+If [`juliaup`](https://github.com/JuliaLang/juliaup) is available (recommended), the right version can be installed simply by,
 ```bash
 juliaup add 1.11.0
 ```
@@ -118,8 +123,23 @@ julia +1.11.0 --project=. -e "using Pkg; Pkg.instantiate();"
 ```
 
 Each benchmark can be run independently in its respective folder.
-Alternatively, an automated script `main.jl` is provided to run **all the benchmarks** (run from within the project directory),
+Alternatively, an automated script [`main.jl`](main.jl) is provided to run **all the benchmarks**,
 ```bash
-# run while ensuring julia v1.11.0 and proper environment
 julia +1.11.0 --project=. main.jl
 ```
+
+## Development Container (for developers)
+
+If you intend to develop the source code without modifying/installing any dependencies on your host computer, you can make use of [development containers](https://containers.dev/) for setting up the requisite environment.
+
+A specification file [`.devcontainer.json`](.devcontainer.json) is provided for building the devcontainer and can be utilized by supporting editors.
+
+Necessary tools :
+- [Docker Engine](https://docs.docker.com/engine/install/) (tested with `27.3.1`),
+- [Visual Studio Code](https://code.visualstudio.com/) with [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension (support since 2019. Tested with version `1.94.2`).
+
+Start VS Code, run the "Dev Containers: Open Folder in Container..." command from the Command Palette (F1), and select the project folder.
+While done for the first time, this should start building the container and can take a while (~5 min) and subsequently open the project within the container.
+The build is cached for subsequent runs and should be fairly quick thereon.
+
+Proceed to [running the scripts](#run-in-julia).
