@@ -88,12 +88,13 @@ Run a disposable container by sharing the project folder within,
 docker run --rm \
   -u $(id -u):$(id -g) \
   -v $PWD:/src \
-  -w /src pressure-projections \
-  julia \
-    --project=. \
-    --startup-file=no \
-    --history-file=no \
-    -e 'using Pkg; Pkg.instantiate(); include("main.jl")'
+  -w /src \
+  pressure-projections \
+    julia \
+      --project=/pressure-projections \
+      --startup-file=no \
+      --history-file=no \
+      main.jl
 ```
 
 This should run an instance of the Julia REPL where each benchmark can be executed.
