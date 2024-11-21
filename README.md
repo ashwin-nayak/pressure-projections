@@ -69,6 +69,9 @@ You may either choose to use,
   - [Build and run in containers](#run-using-docker-container): Recommended to primarily reproduce results
   - [Compile and Run](#run-in-julia): Recommended for customizations and further development.
 
+> [!WARNING]
+> The code execution requires a large amount of free RAM memory (>40 GB) and a runtime of about ~20 h (due to large problem sizes for highly resolved meshes).
+
 ## Run using docker container
 
 The project offers a [`Dockerfile`](Dockerfile) to automate the configuration and execution by,
@@ -99,24 +102,28 @@ docker run --rm \
 
 This should run an instance of the Julia REPL where each benchmark can be executed.
 
+> [!TIP]
 > The flags ensure correct user permissions are set on the container-generated output files. Additionally, the container information is cleared at the end of the run.
 
 ## Run in Julia
 
 Setup the right versions and proper environment to run the scripts by following along the links,
 
-1. [Install Julia (`v1.11.0`)](https://docs.julialang.org/en/v1.11.0/)
+1. [Install Julia (`v1.11.0`)](https://docs.julialang.org/en/v1.11.0/) (not described here)
 2. [Install Dependencies](https://pkgdocs.julialang.org/v1/environments/#Using-someone-else's-project)
 
+
+> [!TIP]
+> If [`juliaup`](https://github.com/JuliaLang/juliaup) is available (recommended), the right version can be installed simply by,
+>```bash
+>juliaup add 1.11.0
+>```
+
+> [!TIP]
 > If you already have installed Julia before, verify the version you have by,
 > ```shell
 >julia -e 'using InteractiveUtils; versioninfo()'
 >```
-
-If [`juliaup`](https://github.com/JuliaLang/juliaup) is available (recommended), the right version can be installed simply by,
-```bash
-juliaup add 1.11.0
-```
 
 Install relevant dependencies to ensure proper environment,
 ```bash
@@ -143,4 +150,4 @@ Start VS Code, run the "Dev Containers: Open Folder in Container..." command fro
 While done for the first time, this should start building the container and can take a while (~5 min) and subsequently open the project within the container.
 The build is cached for subsequent runs and should be fairly quick thereon.
 
-Proceed to [running the scripts](#run-in-julia).
+Proceed to [running the benchmarks](#run-in-julia).
