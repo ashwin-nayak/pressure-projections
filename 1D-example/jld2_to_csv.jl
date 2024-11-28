@@ -1,6 +1,9 @@
 # Read JLD2 data
 using JLD2
-data = load("results/convergence_data_from_exact_k=50_orderFEpostprocessing=2.jld2")
+# data = load("results/convergence_data_from_exact_k=50_orderFEpostprocessing=1.jld2")
+# data = load("results/convergence_data_from_exact_k=50_orderFEpostprocessing=2.jld2")
+# data = load("results/convergence_data_from_fem_k=50_orderFE=1_orderFEpostprocessing=1.jld2")
+data = load("results/convergence_data_from_fem_k=50_orderFE=2_orderFEpostprocessing=2.jld2")
 
 # Save errors to a CSV file
 using DelimitedFiles
@@ -23,7 +26,12 @@ csv_data = hcat(
     data["error_L2_proj_H2_DG"], data["error_H1_proj_H2_DG"]
 )
 
-open("results/convergence_data_from_exact_k=$(Integer(data["k"]))_orderFEpostprocessing=$(Integer(data["orderFE_postprocessing"])).csv", "w") do io
+# open("results/convergence_data_from_exact_k=$(Integer(data["k"]))_orderFEpostprocessing=$(Integer(data["orderFE_postprocessing"])).csv", "w") do io
+#     writedlm(io, [csv_header])
+#     writedlm(io, csv_data)
+# end
+
+open("results/convergence_data_from_fem_k=$(Integer(data["k"]))_orderFE=$(data["orderFE"])_orderFEpostprocessing=$(data["orderFE_postprocessing"]).csv", "w") do io
     writedlm(io, [csv_header])
     writedlm(io, csv_data)
 end
