@@ -97,12 +97,12 @@ lines!([(x0, y0), (x1, y0), (x0, y1), (x0, y0)], color=:black, linewidth=0.5)
 text!([(10.0^(0.95*log10(x0)+0.05*log10(x1)), 10.0^(0.5*log10(y1)+0.5*log10(y0)))], text=L"O(h)", color=:black, fontsize=10)
 
 fig
-save("convergence_plot_from_fem_k=$(Integer(k))_orderFE=$(orderFE)_orderFEpostprocessing=$(orderFE_postprocessing).pdf", fig)
+save("results/convergence_plot_from_fem_k=$(Integer(k))_orderFE=$(orderFE)_orderFEpostprocessing=$(orderFE_postprocessing).pdf", fig)
 
 # Save errors to a JDL2 file
 using JLD2
 h_values = 1.0./N_values
-save("convergence_data_from_fem_k=$(Integer(k))_orderFE=$(orderFE)_orderFEpostprocessing=$(orderFE_postprocessing).jld2",
+save("results/convergence_data_from_fem_k=$(Integer(k))_orderFE=$(orderFE)_orderFEpostprocessing=$(orderFE_postprocessing).jld2",
     "N_values", N_values, "h_values", h_values, "k", k, "orderFE", orderFE, "orderFE_postprocessing", orderFE_postprocessing,
     "error_L2_u", error_L2_u, "error_H1_u", error_H1_u, "error_L2_p", error_L2_p, "error_H1_p", error_H1_p,
     "error_L2_proj_DG", error_L2_proj_DG, "error_H1_proj_DG", error_H1_proj_DG, "error_L2_proj_CG", error_L2_proj_CG, "error_H1_proj_CG", error_H1_proj_CG,
