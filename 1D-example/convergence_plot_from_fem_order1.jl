@@ -103,7 +103,7 @@ save("convergence_plot_from_fem_k=$(Integer(k))_orderFE=$(orderFE)_orderFEpostpr
 using JLD2
 h_values = 1.0./N_values
 save("convergence_data_from_fem_k=$(Integer(k))_orderFE=$(orderFE)_orderFEpostprocessing=$(orderFE_postprocessing).jld2",
-    "h_values", h_values, "k", k, "orderFE", orderFE, "orderFE_postprocessing", orderFE_postprocessing,
+    "N_values", N_values, "h_values", h_values, "k", k, "orderFE", orderFE, "orderFE_postprocessing", orderFE_postprocessing,
     "error_L2_u", error_L2_u, "error_H1_u", error_H1_u, "error_L2_p", error_L2_p, "error_H1_p", error_H1_p,
     "error_L2_proj_DG", error_L2_proj_DG, "error_H1_proj_DG", error_H1_proj_DG, "error_L2_proj_CG", error_L2_proj_CG, "error_H1_proj_CG", error_H1_proj_CG,
     "error_L2_proj_H1", error_L2_proj_H1, "error_H1_proj_H1", error_H1_proj_H1, "error_L2_proj_H2_DG", error_L2_proj_H2_DG, "error_H1_proj_H2_DG", error_H1_proj_H2_DG)
