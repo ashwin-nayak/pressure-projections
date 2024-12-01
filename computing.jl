@@ -208,6 +208,7 @@ function compute_from_exact(k, N, orderFE_postprocessing, exact_solution, plot_f
         ax.ylabel = L"y"
         # Axis equal
         ax.aspect = DataAspect()
+        ax.yticks = [0.00, 0.04]
         # Save the figure to pdf format with 300 dpi
         save("./results/mesh_N=$(N).pdf", fig)
 
@@ -217,10 +218,14 @@ function compute_from_exact(k, N, orderFE_postprocessing, exact_solution, plot_f
         ax.xlabel = L"x"
         ax.ylabel = L"y"
         # Axis equal
-        ax.aspect = DataAspect()
+        # ax.aspect = DataAspect()
+        ax.yticks = [0.00, 0.04]
+        
         # Colorbar with limits and fixed ticks
-        # cbar = Colorbar(fig[2,1], plt, label=L"\mathrm{Re}(p_{\mathrm{ex}})", vertical=false)
-        cbar = Colorbar(fig[1,2], plt, label=L"\mathrm{Re}(p_{\mathrm{ex}})")
+        cbar = Colorbar(fig[2,1], plt, label=L"\mathrm{Re}(p_{\mathrm{ex}})", vertical=false, flipaxis = false)
+        rowsize!(fig.layout, 1, Aspect(1, 0.04))
+        resize_to_layout!(fig)
+        # cbar = Colorbar(fig[1,2], plt, label=L"\mathrm{Re}(p_{\mathrm{ex}})")
         # Save the figure to pdf format with 300 dpi
         save("./results/plot_pex_N=$(N).pdf", fig)
     end
