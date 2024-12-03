@@ -55,12 +55,12 @@ The library is structured into the following folders, which correspond to each b
 
 | Folder              | Information                                                                     |
 |---------------------|---------------------------------------------------------------------------------|
-| `1D-example`                      | One-dimensional planewave propagation in an elongated rectangle |
-| `2D-annulus-example`              | Two-dimensional radial wave propagation in a quarter of an annular domain |
-| `2D-square-structured-example`    | Two-dimensional planewave propagation in the unit square using a structured mesh |
-| `2D-square-unstructured-example`  | Two-dimensional planewave propagation in the unit square using an unstructured mesh |
-| `2D-square-noise-example`         | Two-dimensional planewave propagation in the unit square in the presence of noise |
-| `2D-room-example`                 | Two-dimensional transmitted field in the interior of the cross-section of an auditorium |
+| [`1D-example`](1D-example)                      | One-dimensional planewave propagation in an elongated rectangle |
+| [`2D-annulus-example`](2D-annulus-example)              | Two-dimensional radial wave propagation in a quarter of an annular domain |
+| [`2D-square-structured-example`](2D-square-structured-example)    | Two-dimensional planewave propagation in the unit square using a structured mesh |
+| [`2D-square-unstructured-example`](2D-square-unstructured-example)  | Two-dimensional planewave propagation in the unit square using an unstructured mesh |
+| [`2D-square-noise-example`](2D-square-noise-example)         | Two-dimensional planewave propagation in the unit square in the presence of noise |
+| [`2D-room-example`](2D-room-example)                 | Two-dimensional transmitted field in the interior of the cross-section of an auditorium |
 
 To run the scripts, you must first set the environment and dependent Julia packages.
 Instructions provided here are provided for standard UNIX distributions, but maybe easily adopted (but not tested) in other operating systems.
