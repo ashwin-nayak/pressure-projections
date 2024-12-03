@@ -27,15 +27,9 @@ $$
 
 The following instructions run the example **assuming you are in the current directory**.
 
-Ensure the folders `meshes` and `results` exists,
-```bash
-mkdir meshes && mkdir results
-```
-
 An automated script [`main.jl`](main.jl) is provided to run scripts in a particular order,
 
 ```bash
 julia +1.11.0 --project=.. main.jl
 ```
-This should generate the meshes in the `meshes` folder, write output fields into `.jld2` and results in `.pdf`.
-Mesh visualizations and results are also written as `.pdf` files in `results` directory.
+This should generate the meshes of various resolutions in the `meshes` folder. All output fields are written within `.jld2` files and visualizations in `.pdf` files within the `results` folder.
