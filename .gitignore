@@ -1,4 +1,5 @@
 *.jld2
 *.vtu
 *.pdf
-*.msh
+meshes/
+results/
