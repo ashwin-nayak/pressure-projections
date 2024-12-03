@@ -51,7 +51,7 @@ h_values = 1.0./N_values
 
 # Save errors to a JDL2 file
 using JLD2
-save("convergence_data_from_exact_k=$(Integer(k))_orderFEpostprocessing=$(orderFE_postprocessing).jld2",
+save("results/convergence_data_from_exact_k=$(Integer(k))_orderFEpostprocessing=$(orderFE_postprocessing).jld2",
     "h_values", h_values, "k", k, "orderFE_postprocessing", orderFE_postprocessing,
     "error_L2_u", error_L2_u, "error_H1_u", error_H1_u, "error_L2_p", error_L2_p, "error_H1_p", error_H1_p,
     "error_L2_proj_DG", error_L2_proj_DG, "error_H1_proj_DG", error_H1_proj_DG, "error_L2_proj_CG", error_L2_proj_CG, "error_H1_proj_CG", error_H1_proj_CG,

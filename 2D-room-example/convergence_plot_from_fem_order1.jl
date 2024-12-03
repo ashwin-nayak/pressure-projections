@@ -79,7 +79,7 @@ h_values = 1.0./N_values
 
 # Save errors to a JDL2 file
 using JLD2
-save("CPUtime_data_from_fem_k=$(Integer(k))_orderFE=$(orderFE)_orderFEpostprocessing=$(orderFE_postprocessing).jld2",
+save("results/CPUtime_data_from_fem_k=$(Integer(k))_orderFE=$(orderFE)_orderFEpostprocessing=$(orderFE_postprocessing).jld2",
     "h_values", h_values, "k", k, "orderFE", orderFE, "orderFE_postprocessing", orderFE_postprocessing,
     "CPUtime_u", CPUtime_u, "Memory_u", Memory_u, "CPUtime_p", CPUtime_p, "Memory_p", Memory_p,
     "CPUtime_proj_DG", CPUtime_proj_DG, "Memory_proj_DG", Memory_proj_DG, "CPUtime_proj_CG", CPUtime_proj_CG, "Memory_proj_CG", Memory_proj_CG,

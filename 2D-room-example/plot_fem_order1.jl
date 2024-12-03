@@ -13,7 +13,7 @@ orderFE = 1
 
 # Load variables from JDL2 file
 using JLD2
-file = "CPUtime_data_from_fem_k=50_orderFE=1_orderFEpostprocessing=1.jld2"
+file = "results/CPUtime_data_from_fem_k=50_orderFE=1_orderFEpostprocessing=1.jld2"
 vars = load(file)
 k = vars["k"]
 orderFE_postprocessing = vars["orderFE_postprocessing"]
@@ -86,7 +86,7 @@ lines!([(x0, y0), (x1, y0), (x0, y1), (x0, y0)], color=:black, linewidth=0.5)
 text!([(10.0^(0.8*log10(x0)+0.2*log10(x1)), 10.0^(0.8*log10(y0)+0.2*log10(y1)))], text=L"O(h^2)", color=:black, fontsize=10)
 
 fig
-save("CPUtime_plot_from_fem_k=$(Integer(k))_orderFE=$(orderFE)_orderFEpostprocessing=$(orderFE_postprocessing).pdf", fig)
+save("results/CPUtime_plot_from_fem_k=$(Integer(k))_orderFE=$(orderFE)_orderFEpostprocessing=$(orderFE_postprocessing).pdf", fig)
 
 # Plot memory and allocations with latex labels and log scale in Makie
 Memory_u = vars["Memory_u"]
@@ -122,7 +122,7 @@ lines!([(x0, y0), (x1, y0), (x0, y1), (x0, y0)], color=:black, linewidth=0.5)
 text!([(10.0^(0.8*log10(x0)+0.2*log10(x1)), 10.0^(0.8*log10(y0)+0.2*log10(y1)))], text=L"O(h^2)", color=:black, fontsize=10)
 
 fig
-save("Memory_plot_from_fem_k=$(Integer(k))_orderFE=$(orderFE)_orderFEpostprocessing=$(orderFE_postprocessing).pdf", fig)
+save("results/Memory_plot_from_fem_k=$(Integer(k))_orderFE=$(orderFE)_orderFEpostprocessing=$(orderFE_postprocessing).pdf", fig)
 
 # Plot memory and allocations with latex labels and log scale in Makie
 Memory_u = vars["Memory_u"]
@@ -157,4 +157,4 @@ xlims!(ax, 2*pi/k.*N_values[end], 2*pi/k.*N_values[1])
 # text!([(10.0^(0.8*log10(x0)+0.2*log10(x1)), 10.0^(0.8*log10(y0)+0.2*log10(y1)))], text=L"O(h^2)", color=:black, fontsize=10)
 
 fig
-save("Allocations_plot_from_fem_k=$(Integer(k))_orderFE=$(orderFE)_orderFEpostprocessing=$(orderFE_postprocessing).pdf", fig)
+save("results/Allocations_plot_from_fem_k=$(Integer(k))_orderFE=$(orderFE)_orderFEpostprocessing=$(orderFE_postprocessing).pdf", fig)

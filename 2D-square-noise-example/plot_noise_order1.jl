@@ -14,7 +14,7 @@ orderFE_postprocessing = 1
 
 # Load variables from JDL2 file
 using JLD2
-file = "convergence_data_from_noise_k=$(Integer(k))_orderFEpostprocessing=$(orderFE_postprocessing).jld2"
+file = "results/convergence_data_from_noise_k=$(Integer(k))_orderFEpostprocessing=$(orderFE_postprocessing).jld2"
 vars = load(file)
 SNR_values = vars["SNR_values"]
 error_L2_u = vars["error_L2_u"]
@@ -63,4 +63,4 @@ lines!([(x0, y0), (x1, y0), (x0, y1), (x0, y0)], color=:black, linewidth=0.5)
 text!([(10.0^((0.95*log10(x0)+0.05*log10(x1))), 10.0^(0.95*log10(y0)+0.05*log10(y1)))], text=L"O(\mathrm{SNR})", color=:black, fontsize=8)
 
 fig
-save("convergence_plot_from_noise_k=$(Integer(k))_orderFEpostprocessing=$(orderFE_postprocessing).pdf", fig)
+save("results/convergence_plot_from_noise_k=$(Integer(k))_orderFEpostprocessing=$(orderFE_postprocessing).pdf", fig)

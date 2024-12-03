@@ -14,7 +14,7 @@ orderFE = 1
 
 # Load variables from JDL2 file
 using JLD2
-file = "convergence_data_from_fem_k=50_orderFE=1_orderFEpostprocessing=1.jld2"
+file = "results/convergence_data_from_fem_k=50_orderFE=1_orderFEpostprocessing=1.jld2"
 vars = load(file)
 k = vars["k"]
 orderFE_postprocessing = vars["orderFE_postprocessing"]
@@ -77,4 +77,4 @@ lines!([(x0, y0), (x1, y0), (x1, y1), (x0, y0)], color=:black, linewidth=0.5)
 text!([(10.0^((log10(x0)+log10(x1))/2), 10.0^(0.9*log10(y0)+0.1*log10(y1)))], text=L"O(h)", color=:black, fontsize=10)
 
 fig
-save("convergence_plot_from_fem_k=$(Integer(k))_orderFE=$(orderFE)_orderFEpostprocessing=$(orderFE_postprocessing).pdf", fig)
+save("results/convergence_plot_from_fem_k=$(Integer(k))_orderFE=$(orderFE)_orderFEpostprocessing=$(orderFE_postprocessing).pdf", fig)
