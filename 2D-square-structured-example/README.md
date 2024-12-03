@@ -1,15 +1,12 @@
-# 1D Example
+# Unit Square Domain with Structured Mesh
 
-One-dimensional planewave propagation in an elongated rectangle.
+2D Plane wave propagation in unit square domain discretized into cross-diagonal structured meshes.
 
-
-- Domain, $\Omega = {(0,L)\times(0,h)}$
-  - Length, $L=1$
-  - Width, $h$ is the mesh-width.
-- Boundary conditions
-  - Rigid boundary, $\boldsymbol{u} \cdot \boldsymbol{n} = 0$ at $y=0$ and $y=h$,
-  - Pressure $p = 1.0$ at $x=0$,
-  - Impedance $Z = 1.0$ at $x=L$.
+- Domain, $\Omega=(0,1) \times (0,1)$
+- Boundary Conditions
+  - Rigid boundary, $\boldsymbol{u} \cdot \boldsymbol{n} = 0$ at $x=0$ and $x=1$,
+  - Pressure $p=1.0$ at $y=0$,
+  - Impedance $Z=1.0$ at $y=1$.
 
 The boundary conditions are expressly chosen such that the exact solution can be computed analytically and the errors can be computed.
 
@@ -17,8 +14,8 @@ The exact solution here is given as,
 
 $$
 \begin{aligned}
-    \boldsymbol{u}\_{\mathrm{ex}} (x,y) &= {\frac{{p}\_{0}}{k^2}} \exp (\mathrm{i} k x) \boldsymbol{e}\_{x}, \\
-    {p}\_{\mathrm{ex}} (x,y)  &= {p}\_{0} \exp(\mathrm{i} k x).
+    \boldsymbol{u}\_{\mathrm{ex}} (x,y) &= {\frac{\mathrm{i} {p}\_{0}}{k}} \exp (\mathrm{i} k x) \boldsymbol{e}\_{y}, \\
+    {p}\_{\mathrm{ex}} (x,y)  &= {p}\_{0} \exp(\mathrm{i} k y).
 \end{aligned}
 $$
 
