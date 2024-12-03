@@ -2,7 +2,7 @@
 
 Acoustic propagation within a 2D room scenario.
 
-- Custom room domain, $\Omega$ (see `meshing.jl` or the article for details)
+- Custom room domain, $\Omega$ (see [`meshing.jl`](meshing.jl) or the article for details)
 - Boundary Conditions,
   - Rigid Boundaries on top and left,
   - Bottom Staircase boundary with impedance $Z=1.0$,
@@ -11,7 +11,7 @@ Acoustic propagation within a 2D room scenario.
 > [!IMPORTANT]
 > No exact solution is known apriori for this scenario and hence, no analytical errors can be computed.
 
-The computational time required to compute the pressure field using the first and second-order approximations are computed.
+The computational time and memory required for the pressure projections using the first and second-order approximations are computed.
 
 ## Run
 
