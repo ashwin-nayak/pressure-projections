@@ -22,6 +22,8 @@ for subdir in subdirs
         println("Running main.jl in subdirectory: $subdir")
         # Change to the subdirectory and execute main.jl in the subdirectory context
         cd(subdir) do
+            mkpath("meshes")
+            mkpath("results")
             Base.include(Main, sub_main_path)
         end
     else
