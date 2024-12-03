@@ -20,8 +20,9 @@ $$
 $$
 
 However, a noise field $\chi_{h}(x,y)$ is added into this displacement field when included, i.e.
+
 $$
-\boldsymbol{u}_\mathrm{SNR}(x,y) = \boldsymbol{u}_\mathrm{ex}(x,y)\left(1+\frac{\chi_{h}(x,y)}{\mathrm{SNR}}\right).
+\boldsymbol{u}\_\mathrm{SNR}(x,y) = \boldsymbol{u}\_\mathrm{ex}(x,y)\left(1+\frac{\chi\_{h}(x,y)}{\mathrm{SNR}}\right).
 $$
 
 Here, $\chi_{h}(x,y)$ is the interpolated Gaussian noise $\mathcal{N}(0,1)$, while the parameter $\mathrm{SNR}$ is the Signal-to-Noise ratio and varied between different runs.
