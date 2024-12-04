@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Accuracy of post-processing projections for displacement based finite element simulations in room acoustics: Code supplement"
+version: 1.0
+date-released: 2024-12-04
+url: "https://github.com/ashwin-nayak/pressure-projections"
+doi: "10.5281/zenodo.14259639"
+authors:
+- family-names: "Nayak"
+  given-names: "Ashwin S."
+  orcid: "https://orcid.org/0000-0002-9855-2377"
+- family-names: "Prieto"
+  given-names: "Andres"
+  orcid: "https://orcid.org/0000-0002-4399-6878"
+- family-names: "Fernández-Comesaña"
+  given-names: "Daniel"
+  orcid: "https://orcid.org/0000-0003-3286-6637"
