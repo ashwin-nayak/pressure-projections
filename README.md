@@ -1,7 +1,7 @@
 Pressure Projections
 ====================
 
-Code supplement for article "**Accuracy of post-processing projections for displacement based finite element simulations in room acoustics**".
+Code supplement for article "**Accuracy of post-processing projections for displacement based finite element simulations in room acoustics**". [![doi](https://img.shields.io/badge/DOI-10.1016/j.finel.2025.104349-blue)](https://doi.org/10.1016/j.finel.2025.104349)
 
 This repository contains scripts to reproduce all the numerical results included as benchmark cases in the article.
 The implementation is in the **Julia** programming language, primarily using [_Gridap_](https://github.com/gridap/Gridap.jl) package.
