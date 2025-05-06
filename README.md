@@ -1,7 +1,7 @@
 Pressure Projections
 ====================
 
-Code supplement for article "**Accuracy of post-processing projections for displacement based finite element simulations in room acoustics**".
+Code supplement for article "**Accuracy of post-processing projections for displacement based finite element simulations in room acoustics**". [![doi](https://img.shields.io/badge/DOI-10.1016/j.finel.2025.104349-blue)](https://doi.org/10.1016/j.finel.2025.104349)
 
 This repository contains scripts to reproduce all the numerical results included as benchmark cases in the article.
 The implementation is in the **Julia** programming language, primarily using [_Gridap_](https://github.com/gridap/Gridap.jl) package.
@@ -151,3 +151,30 @@ While done for the first time, this should start building the container and can 
 The build is cached for subsequent runs and should be fairly quick thereon.
 
 Proceed to [running the benchmarks](#run-in-julia).
+
+## Acknowledgements
+
+<!--
+Logo EU Flag -->
+<a href="https://cordis.europa.eu/project/id/765374/es"> <img src="https://github.com/user-attachments/assets/c6a72c63-4f0f-404f-ae79-1fda0e0525a3" width="100"/> </a>  <!--
+Logo MICIU + Next Generation + PRTR + AEI
+--> &nbsp;&nbsp; <a href="https://www.aei.gob.es/en"> <img src="https://github.com/user-attachments/assets/68bd9a8a-144d-459b-8bc8-d9bc3e31939b" width="400"/></a>
+
+This project has received funding from [**ROMSOC**](https://www.romsoc.eu) [![github](https://img.shields.io/badge/%20-black?logo=github&style=plastic)](https://github.com/ROMSOC), the European Union’s Horizon 2020 research and innovation programme under the [Marie Skłodowska-Curie Grant Agreement No. 765374](https://cordis.europa.eu/project/id/765374/es). 
+
+In addition, the project has been co-funded by the **NumSeaHy** project grant TED2021-131660B-I00 funded by [Spanish Ministry of Science and Innovation](https://www.aei.gob.es/en), MICIU/AEI /10.13039/501100011033 and by the [European Union NextGenerationEU/PRTR](https://next-generation-eu.europa.eu).
+
+## Disclaimer
+
+In downloading/using this SOFTWARE you are deemed to have read and agreed to the following besides the license terms:
+
+- This SOFTWARE has been designed with an exclusive focus on civil applications.
+- It is not to be used for any illegal, deceptive, misleading or unethical purpose or in any military applications.
+- This includes ANY APPLICATION WHERE THE USE OF THE SOFTWARE MAY RESULT IN DEATH, PERSONAL INJURY OR SEVERE PHYSICAL OR ENVIRONMENTAL DAMAGE.
+- Any redistribution of the software must retain this disclaimer.
+- BY INSTALLING, COPYING, OR OTHERWISE USING THE SOFTWARE, YOU AGREE TO THE TERMS ABOVE.
+
+IF YOU DO NOT AGREE TO THESE TERMS, DO NOT INSTALL OR USE THE SOFTWARE.
+
+Additionally, this repository reflects the views of the author(s) and does not necessarily reflect the views or policy of the European Commission.
+The European Research Executive Agency (REA) cannot be held responsible for any use that may be made of the information in this repository.
